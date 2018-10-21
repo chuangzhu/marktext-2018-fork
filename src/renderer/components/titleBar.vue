@@ -19,12 +19,12 @@
         <span class="save-dot" :class="{'show': !isSaved}"></span>
       </span>
     </div>
-    <div :class="platform !== 'darwin' ? 'left-toolbar title-no-drag' : 'right-toolbar'">
-      <div
+    <div class="right-toolbar">
+      <!--<div
         v-if="platform !== 'darwin'"
         class="frameless-titlebar-menu title-no-drag"
         @click.stop="handleMenuClick"
-      >&#9776;</div>
+      >&#9776;</div>-->
       <div
         v-if="wordCount"
         class="word-count"
@@ -32,7 +32,7 @@
         @click.stop="handleWordClick"
       >{{ `${HASH[show]} ${wordCount[show]}` }}</div>
     </div>
-    <div
+    <!--<div
       v-if="platform !== 'darwin'"
       class="right-toolbar"
       :class="[{ 'title-no-drag': platform !== 'darwin' }]"
@@ -60,7 +60,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div>-->
 </template>
 
 <script>
@@ -124,6 +124,7 @@
         this.show = ITEMS[index]
       },
 
+      /*
       handleCloseClick () {
         remote.getCurrentWindow().close()
       },
@@ -142,6 +143,7 @@
       handleMinimizeClick () {
         remote.getCurrentWindow().minimize()
       },
+      */
 
       handleMenuClick () {
         const win = remote.getCurrentWindow()
@@ -156,9 +158,7 @@
       },
 
       rename () {
-        if (this.platform === 'darwin') {
-          this.$store.dispatch('RESPONSE_FOR_RENAME')
-        }
+        this.$store.dispatch('RESPONSE_FOR_RENAME')
       }
     },
     beforeDestroy () {
