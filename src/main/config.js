@@ -13,7 +13,7 @@ export const defaultWinOptions = {
   },
   useContentSize: true,
   show: false,
-  frame: false,
+  frame: true,
   titleBarStyle: 'hidden'
 }
 

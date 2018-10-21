@@ -172,7 +172,7 @@
 
 <style scoped>
   .editor-container {
-    padding-top: var(--titleBarHeight);
+    padding-bottom: var(--titleBarHeight);
   }
   .editor-container .hide {
     z-index: -1;
